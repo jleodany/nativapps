@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "c5d4a06c-1bc6-4719-aaa6-e00d59d14ff7",
+		"name": "nativapps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5436282"
+	},
+	"item": [
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Create New Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"documentId\": \"2356865423\",\n    \"firstName\": \"Jhon\",\n    \"lastName\": \"Doe\",\n    \"email\": \"jdoe@test.com\",\n    \"phone\": \"5346457334\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/patient/search?firstName=Jhon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"patient",
+								"search"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Jhon"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
