@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: $PG_DB_PASS
+      POSTGRES_USER: $PG_DB_USER
+      POSTGRES_DB: $PG_DB_NAME
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - $PG_DB_PORT:$PG_DB_PORT
+  web:
+    image: nativapps-test
+    depends_on:
+      - db
+    ports:
+      - '4000:4000'
